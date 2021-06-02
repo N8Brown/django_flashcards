@@ -1,6 +1,8 @@
 env/
 
-django_flashcards/django_flashcards/__pycache__/
 django_flashcards/django_flashcards/settings.py
+
+django_flashcards/django_flashcards/__pycache__/
+
 
 django_flashcards/db.sqlite3
