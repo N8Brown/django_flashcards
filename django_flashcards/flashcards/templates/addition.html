@@ -4,11 +4,21 @@
 {% block content %}
 
 <h1>Addition</h1>
+<br>
+<h2>{{ num1 }} + {{ num2 }}</h2>
+<br>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Your Answer:</strong> {{ answer }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 <p>Your Answer: {{ answer }}</p>
+<p>Correct Answer: {{ correct_answer }}</p>
 <form action="{% url 'addition' %}" method="POST">
     {% csrf_token %}
     <div class="mb-3">
       <input type="text" class="form-control" placeholder="Type Your Answer Here" name="answer">
+      <input type="hidden" name="question_num1" value="{{ num1 }}">
+      <input type="hidden" name="question_num2" value="{{ num2 }}">
     </div>
     <button type="submit" class="btn btn-secondary">Submit</button>
 </form>
